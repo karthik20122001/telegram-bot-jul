@@ -1,3 +1,6 @@
+!pip install adafruit-io --quiet
+!pip install python-telegram-bot==13.0
+
 from Adafruit_IO import Client
 from telegram.ext import Updater, MessageHandler,Filters
 
