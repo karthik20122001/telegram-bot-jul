@@ -40,7 +40,7 @@ def fanOff(bot,update):
   aio.send('fan', 0)
   path = 'https://www.lifesavvy.com/p/uploads/2019/06/37df4c5d.jpg?height=200p&trim=2,2,2,2'
   update.bot.sendPhoto(chat_id=chat_id,photo=path)
-  bot.message.reply_text("light is turned on")
+  bot.message.reply_text("fan is turned off")
 
 def main(bot,update):
   a = bot.message.text.lower()
