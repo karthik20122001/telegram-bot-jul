@@ -28,6 +28,20 @@ def lightOff(bot,update):
   update.bot.sendPhoto(chat_id=chat_id,photo=path)
   bot.message.reply_text("light is turned off")
 
+def fanOn(bot,update):
+  chat_id = bot.message.chat_id
+  aio.send('fan', 1)
+  path = 'https://www.thespruce.com/thmb/tyVxBz0q2ToJOLZCGKUHj6vwId0=/1883x1412/smart/filters:no_upscale()/GettyImages-182436453-5c79e51cc9e77c0001e98e6c.jpg'
+  update.bot.sendPhoto(chat_id=chat_id,photo=path)
+  bot.message.reply_text("fan is turned on")
+
+def fanOff(bot,update):
+  chat_id = bot.message.chat_id
+  aio.send('fan', 0)
+  path = 'https://www.lifesavvy.com/p/uploads/2019/06/37df4c5d.jpg?height=200p&trim=2,2,2,2'
+  update.bot.sendPhoto(chat_id=chat_id,photo=path)
+  bot.message.reply_text("light is turned on")
+
 def main(bot,update):
   a = bot.message.text.lower()
   print(a)
@@ -40,8 +54,13 @@ def main(bot,update):
     lightOn(bot,update)
   elif a =="turn off the light" or a =="light off":
     lightOff(bot,update)
+  elif a =="turn on the fan" or a =="fan on":
+    fanOn(bot,update)
+  elif a =="turn off the fan" or a =="fan off":
+    fanOff(bot,update)
   else:
     bot.message.reply_text('Invalid Text')
+
 
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 u = Updater(BOT_TOKEN,use_context=True)
